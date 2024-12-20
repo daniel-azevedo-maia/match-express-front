@@ -6,12 +6,13 @@
     <title>Conecta Serviços</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Conecta Serviços</a>
+            <a class="navbar-brand fw-bold" href="index.html">Conecta Serviços</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,88 +35,89 @@
         </div>
     </nav>
 
-    <header class="bg-primary text-white text-center py-5">
+    <header class="bg-primary text-white text-center py-5 shadow">
         <div class="container">
-            <h1>Encontre o Serviço Certo para Você</h1>
+            <h1 class="fw-bold display-4">Encontre o Serviço Certo para Você</h1>
             <p class="lead">Publique sua necessidade e deixe os profissionais virem até você!</p>
-            <a href="#postar-necessidade" class="btn btn-light btn-lg">Comece Agora</a>
+            <a href="#postar-necessidade" class="btn btn-light btn-lg shadow">Comece Agora</a>
         </div>
     </header>
 
-    <section id="postar-necessidade" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Publique Sua Solicitação de Serviço</h2>
-            <form id="formulario-solicitacao" class="needs-validation" novalidate>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="descricaoServico" class="form-label">Descreva Sua Necessidade</label>
-                        <textarea class="form-control" id="descricaoServico" rows="5" placeholder="Ex.: Preciso de um encanador para consertar uma pia com vazamento." required></textarea>
-                        <div class="invalid-feedback">Por favor, forneça uma descrição da sua necessidade.</div>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="urgencia" class="form-label">Nível de Urgência</label>
-                        <select class="form-select" id="urgencia" required>
-                            <option value="" selected>Selecione a Urgência</option>
-                            <option value="baixa">Baixa</option>
-                            <option value="media">Média</option>
-                            <option value="alta">Alta</option>
-                        </select>
-                        <div class="invalid-feedback">Por favor, selecione o nível de urgência.</div>
+    <main>
+        <section id="postar-necessidade" class="py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-4">Publique Sua Solicitação de Serviço</h2>
+                <form id="formulario-solicitacao" class="needs-validation" novalidate>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="descricaoServico" class="form-label">Descreva Sua Necessidade</label>
+                            <textarea class="form-control shadow" id="descricaoServico" rows="5" placeholder="Ex.: Preciso de um encanador para consertar uma pia com vazamento." required></textarea>
+                            <div class="invalid-feedback">Por favor, forneça uma descrição da sua necessidade.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="urgencia" class="form-label">Nível de Urgência</label>
+                            <select class="form-select shadow" id="urgencia" required>
+                                <option value="" selected>Selecione a Urgência</option>
+                                <option value="baixa">Baixa</option>
+                                <option value="media">Média</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecione o nível de urgência.</div>
 
-                        <label for="localizacao" class="form-label mt-3">Localização</label>
-                        <input type="text" class="form-control" id="localizacao" placeholder="Ex.: João Pessoa, PB" required>
-                        <div class="invalid-feedback">Por favor, insira sua localização.</div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Publicar Solicitação</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="solicitacoes-ativas" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Solicitações Ativas</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Serviço de Limpeza</h5>
-                            <p class="card-text">Urgência: Alta</p>
-                            <p class="card-text">Localização: João Pessoa, PB</p>
-                            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                            <label for="localizacao" class="form-label mt-3">Localização</label>
+                            <input type="text" class="form-control shadow" id="localizacao" placeholder="Ex.: João Pessoa, PB" required>
+                            <div class="invalid-feedback">Por favor, insira sua localização.</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Tosa e Banho</h5>
-                            <p class="card-text">Urgência: Média</p>
-                            <p class="card-text">Localização: João Pessoa, PB</p>
-                            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                    <button type="submit" class="btn btn-primary w-100 shadow">Publicar Solicitação</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="solicitacoes-ativas" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-4">Solicitações Ativas</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Serviço de Limpeza</h5>
+                                <p class="card-text">Urgência: Alta</p>
+                                <p class="card-text">Localização: João Pessoa, PB</p>
+                                <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Problema de Encanamento</h5>
-                            <p class="card-text">Urgência: Baixa</p>
-                            <p class="card-text">Localização: João Pessoa, PB</p>
-                            <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Tosa e Banho</h5>
+                                <p class="card-text">Urgência: Média</p>
+                                <p class="card-text">Localização: João Pessoa, PB</p>
+                                <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Problema de Encanamento</h5>
+                                <p class="card-text">Urgência: Baixa</p>
+                                <p class="card-text">Localização: João Pessoa, PB</p>
+                                <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; 2024 Conecta Serviços. Desenvolvido por Daniel Azevedo de Oliveira Maia. Todos os direitos reservados.</p>
+            <p class="mb-0">&copy; 2024 Conecta Serviços. Desenvolvido por Daniel Azevedo de Oliveira Maia. Todos os direitos reservados.</p>
         </div>
     </footer>
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts.js"></script>

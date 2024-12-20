@@ -1,172 +1,206 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.8;
+/* Reset CSS para consistência */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
     color: #333;
-    background-color: #f4f5f7;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
-/* Navbar */
+/* Estilo Padrão para Navbar */
 .navbar {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-    background-color: #0056b3;
-    padding: 0.8rem 1rem;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(135deg, #343a40, #212529);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.6rem;
-    color: #fff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.navbar .navbar-brand {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #f8f9fa;
+    transition: color 0.3s ease-in-out;
 }
-.nav-link {
-    color: #ffffff;
-    margin-right: 12px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.navbar .navbar-brand:hover {
+    color: #f39c12;
 }
-.nav-link:hover {
-    color: #ffd700;
+.navbar .nav-link {
+    font-size: 1.2rem;
+    color: #f8f9fa;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+.navbar .nav-link.active {
+    color: #f39c12;
+    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.5);
+}
+.navbar .nav-link:hover {
+    color: #f39c12;
+    text-shadow: 0px 1px 3px rgba(255, 255, 255, 0.5);
 }
 
-/* Header */
 header {
-    background: linear-gradient(to right, #0056b3, #007bff);
-    color: #fff;
-    padding: 5rem 2rem;
-    text-align: center;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 100px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 header h1 {
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 4.5rem;
+    font-weight: 900;
     margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-header .lead {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: #e2e8f0;
+header p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 header .btn {
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0.8rem 2rem;
-    background-color: #ffd700;
-    color: #0056b3;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 12px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 header .btn:hover {
-    background-color: #ffc107;
-    transform: translateY(-2px);
+    background: #003f7d;
+    transform: scale(1.05);
 }
 
-/* Section Styles */
 section {
-    padding: 4rem 2rem;
+    padding: 80px 0;
 }
 section h2 {
+    font-size: 3rem;
     font-weight: 700;
     color: #0056b3;
-    margin-bottom: 2rem;
+    margin-bottom: 50px;
     text-align: center;
+    position: relative;
 }
-#postar-necessidade {
-    background-color: #fff;
+section h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Formulários */
+form {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+form .form-control {
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 3rem;
-    transition: transform 0.3s ease;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
 }
-#postar-necessidade:hover {
-    transform: translateY(-5px);
+form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    transform: scale(1.02);
 }
-
-/* Form Styles */
-.form-label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-.form-control,
-.form-select {
-    border-radius: 6px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-.form-control:focus,
-.form-select:focus {
-    box-shadow: 0 0 10px rgba(0, 86, 179, 0.3);
-    border-color: #0056b3;
-}
-.btn-primary {
-    background-color: #0056b3;
-    border: none;
+form .btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 0.8rem 2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 30px;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
 }
-.btn-primary:hover {
-    background-color: #007bff;
-    transform: translateY(-2px);
+form .btn:hover {
+    background: #003f7d;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
 
-/* Card Styles */
+/* Cartões */
 .card {
     border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 .card-title {
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #0056b3;
-    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-.card-text {
-    color: #555;
-    margin-bottom: 1.5rem;
+.card .btn {
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: 8px 20px;
+    transition: background 0.3s ease;
+}
+.card .btn:hover {
+    background-color: #003f7d;
+    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, #212529, #343a40);
+    color: #f8f9fa;
+    padding: 30px 0;
     text-align: center;
-    font-size: 0.9rem;
 }
 footer p {
     margin: 0;
-    line-height: 1.5;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+footer p:hover {
+    opacity: 1;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.2rem;
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    header .lead {
-        font-size: 1.1rem;
-    }
-    section h2 {
-        font-size: 1.8rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-@media (max-width: 576px) {
-    header {
-        padding: 4rem 1rem;
-    }
+
+/* Responsividade */
+@media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
-    header .btn {
-        padding: 0.6rem 1.5rem;
+    header p {
+        font-size: 1.2rem;
+    }
+    form .btn {
+        font-size: 1.1rem;
     }
 }
